@@ -1,0 +1,21 @@
+section {
+    max-width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#searchbar{
+    width: 35%;
+    margin: 20px auto;
+    font-size: 16pt;
+    color: #606060;
+    outline: none;
+
+}
+
+.photo-link{
+    margin: 1.7em;
+}
+
