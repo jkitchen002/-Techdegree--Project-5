@@ -15,11 +15,16 @@ let images = document.getElementsByClassName('photo-link');
 
 $('#searchbar').on('input', function() {
   const search = $('#searchbar').val().toLowerCase();
-  
-  $(images).each(function() {
-    $(this).toggle(search == $(this).attr('title').toLowerCase()) 
+
+  if(search=== ""){
+    $(images).show();
+  } else {
+    $(images).each(function() {
+      $(this).toggle(search == $(this).attr('title').toLowerCase())
+    }
+    )}
   });
-});
+
 
 
 
