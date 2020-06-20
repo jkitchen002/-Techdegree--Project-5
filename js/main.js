@@ -18,7 +18,6 @@ $('#searchbar').on('input', function() {
   
   $(images).each(function() {
     $(this).toggle(search == $(this).attr('title').toLowerCase()) 
-    
   });
 });
 
