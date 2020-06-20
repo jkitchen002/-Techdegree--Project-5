@@ -3,9 +3,9 @@ $("[data-fancybox]").fancybox({
   loop: true,
   keyboard: true,
   toolbar: true,
-  animationEffect: 'zoom',
+  animationEffect: "zoom",
   animationDuration: 400,
-  transitionEffect: 'zoom-in-out',
+  transitionEffect: "zoom-in-out",
   transitionDuration: 850,
   arrows: true,
   slideShow: false,
@@ -13,15 +13,14 @@ $("[data-fancybox]").fancybox({
 
 let images = document.getElementsByClassName('photo-link');
 
-$('#searchbar').on('keyup', function(){
-  let search = $('#searchbar').val().toLowerCase();
+$('#searchbar').on('input', function() {
+  const search = $('#searchbar').val().toLowerCase();
   
-$(images).each(function(){
-  if(search == $(images).attr('data-alt')) {
-    $(images).show();
-  } else { 
-    $('images').fadeOut();
+  $(images).each(function() {
+    $(this).toggle(search == $(this).attr('title').toLowerCase()) 
     
-  }
+  });
 });
-});
+
+
+
