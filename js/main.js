@@ -1,3 +1,5 @@
+//Lightbox//
+
 $("[data-fancybox]").fancybox({
   thumbs: false,
   loop: true,
@@ -11,20 +13,23 @@ $("[data-fancybox]").fancybox({
   slideShow: false,
 });
 
-let images = document.getElementsByClassName('photo-link');
 
-$('#searchbar').on('input', function() {
-  const search = $('#searchbar').val().toLowerCase();
+//SearchBar//
 
-  if(search=== ""){
-    $(images).show();
-  } else {
-    $(images).each(function() {
-      $(this).toggle(search == $(this).attr('title').toLowerCase())
-    }
-    )}
-  });
+const $images = $('.photo-link');
 
-
-
+    $('#searchbar').keyup(function(){
+      const LookingFor = $(this).val().toLowerCase();
+      
+      for (i = 0; i < $images.length; i++) {
+        let search = $images[i].getAttribute('data-caption');
+        if(search.toLowerCase().indexOf(LookingFor) > -1  ) {
+          $images[i].style.display = "";
+        } else{
+          $images[i].style.display="none"
+        }
+      }
+      });
+    
+   
 
